@@ -12,8 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var nameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let user = "1"
-    private  let password = "1"
+    private let user = "User"
+    private  let password = "Password"
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as! WelcomeViewController
-        welcomeVC.agentWelcomeLabel = "Welcome, \(user)!"
+        welcomeVC.agentWelcomeLabel = user
     }
         
     @IBAction func logInPressed() {

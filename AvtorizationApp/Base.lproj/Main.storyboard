@@ -96,7 +96,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
-                                    <action selector="exitFromView" destination="lhO-ob-xh2" eventType="touchUpInside" id="5fL-Lq-KiN"/>
                                     <segue destination="npc-1G-EOe" kind="unwind" unwindAction="unwindWithSegue:" id="s5c-aT-Xs1"/>
                                 </connections>
                             </button>
