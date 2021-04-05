@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AvtorizationApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="AvtorizationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,10 @@
                                 <rect key="frame" x="176.5" y="370.5" width="61" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logInPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="0fw-fh-reK"/>
+                                    <segue destination="lhO-ob-xh2" kind="show" id="Aqd-ZW-4aj"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-km-jYW">
                                 <rect key="frame" x="72" y="433.5" width="270" height="29"/>
@@ -43,11 +47,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Forgot User Name?"/>
+                                        <connections>
+                                            <action selector="forgotUsNameButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="1zO-cA-Ee2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnu-q6-yD0">
                                         <rect key="frame" x="154" y="0.0" width="116" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Forgot Password?"/>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdz-ax-na1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -64,10 +74,69 @@
                             <constraint firstItem="Nt5-km-jYW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y3G-UC-5mF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forgotPasswordButton" destination="TtE-b7-Whh" id="p8c-PP-6f8"/>
+                        <outlet property="forgotUsNameButton" destination="Dnu-q6-yD0" id="2fN-oX-nwv"/>
+                        <outlet property="nameTF" destination="Zsr-Bb-Izc" id="eLQ-Lk-Vg0"/>
+                        <outlet property="passwordTF" destination="raF-gJ-LyJ" id="81d-ez-uyP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="75"/>
+            <point key="canvasLocation" x="-391" y="3"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="2th-0h-haP">
+            <objects>
+                <viewController id="lhO-ob-xh2" customClass="WelcomeViewController" customModule="AvtorizationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41b-DU-CDd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emo-GT-Wnt">
+                                <rect key="frame" x="167" y="697" width="80" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="exitFromView" destination="lhO-ob-xh2" eventType="touchUpInside" id="5fL-Lq-KiN"/>
+                                    <segue destination="npc-1G-EOe" kind="unwind" unwindAction="unwindFor:" id="h1u-bC-dy8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome somebody" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5l-bx-EVF">
+                                <rect key="frame" x="79.5" y="105" width="255" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emogi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0u-zT-Lnd">
+                                <rect key="frame" x="163.5" y="176" width="87" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GCD-zf-UNW"/>
+                        <color key="backgroundColor" red="0.67969591750038993" green="0.59164120285265009" blue="0.67814937870919301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v0u-zT-Lnd" firstAttribute="top" secondItem="J5l-bx-EVF" secondAttribute="bottom" constant="36" id="3jQ-3a-Sbl"/>
+                            <constraint firstItem="emo-GT-Wnt" firstAttribute="centerX" secondItem="41b-DU-CDd" secondAttribute="centerX" id="8Iy-yd-mtC"/>
+                            <constraint firstItem="J5l-bx-EVF" firstAttribute="top" secondItem="GCD-zf-UNW" secondAttribute="top" constant="105" id="LcX-f3-xeo"/>
+                            <constraint firstItem="J5l-bx-EVF" firstAttribute="centerX" secondItem="41b-DU-CDd" secondAttribute="centerX" id="R4U-pf-NOL"/>
+                            <constraint firstItem="GCD-zf-UNW" firstAttribute="bottom" secondItem="emo-GT-Wnt" secondAttribute="bottom" constant="71" id="juh-Qq-yMM"/>
+                            <constraint firstItem="v0u-zT-Lnd" firstAttribute="centerX" secondItem="41b-DU-CDd" secondAttribute="centerX" id="yMD-mA-hfc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e3N-d8-uZF"/>
+                    <connections>
+                        <outlet property="emoji" destination="v0u-zT-Lnd" id="S8B-7U-jpA"/>
+                        <outlet property="welcomeLabel" destination="J5l-bx-EVF" id="nu5-O9-VZu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPb-0j-zUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="npc-1G-EOe" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="3"/>
         </scene>
     </scenes>
     <resources>
