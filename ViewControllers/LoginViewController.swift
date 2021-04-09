@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.agentWelcomeLabel = user.person.name
             } else if let navigationVC = viewController as? UINavigationController {
+//                let generale
                 let targetVC = navigationVC.topViewController as? TargetViewController
                 targetVC?.contentTarget = user.person.target
             }
