@@ -12,22 +12,30 @@ class LoginViewController: UIViewController {
     @IBOutlet var nameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let user = "User"
-    private  let password = "Password"
+    let user = User.getUser()
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Oops!", message: "Your name is \(user) 🖖🏼")
-        : showAlert(title: "Oops!", message: "Your password is \(password) 🤌🏼")
+            ? showAlert(title: "Oops!", message: "Your name is \(user.userName) 🖖🏼")
+            : showAlert(title: "Oops!", message: "Your password is \(user.password) 🤌🏼")
     }
 
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as! WelcomeViewController
-        welcomeVC.agentWelcomeLabel = user
+        let tabBarController = segue.destination as! UITabBarController
+        for viewController in tabBarController.viewControllers! {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.agentWelcomeLabel = user.person.name
+            } else if let navigationVC = viewController as? UINavigationController {
+                let targetVC = navigationVC.topViewController as? TargetViewController
+                targetVC?.contentTarget = user.person.target
+            }
+        }
     }
         
     @IBAction func logInPressed() {
-        if nameTF.text != user || passwordTF.text != password {
+        if nameTF.text != user.userName || passwordTF.text != user.password {
             showAlert(title: "Username or Password entered incorrect", message: "Repeat",
             textField: passwordTF)
             return
