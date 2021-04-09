@@ -8,8 +8,8 @@
 import UIKit
 
 class TargetViewController: UIViewController {
-
-    let person = Person.getPerson()
+    
+    @IBOutlet var targetLabel: UILabel!
     
     var contentTarget = ""
     

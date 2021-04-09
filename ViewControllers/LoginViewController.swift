@@ -21,20 +21,24 @@ class LoginViewController: UIViewController {
     }
 
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let tabBarController = segue.destination as! UITabBarController
-        for viewController in tabBarController.viewControllers! {
-            if let welcomeVC = viewController as? WelcomeViewController {
+        
+        for view in tabBarController.viewControllers! {
+            if let welcomeVC = view as? WelcomeViewController {
                 welcomeVC.agentWelcomeLabel = user.person.name
-            } else if let navigationVC = viewController as? UINavigationController {
-//                let generale
-                let targetVC = navigationVC.topViewController as? TargetViewController
-                targetVC?.contentTarget = user.person.target
+            } else if let hobbyVC = view as? HobbyViewController {
+                hobbyVC.hobby = user.person.myHobby
+            } else if let navigationVC = view as? UINavigationController {
+                let generaleVC = navigationVC.topViewController as! GeneraleInfoViewController
+                generaleVC.generale = user.person.generalInfo
+                generaleVC.generaleNavigationLabel = user.person.name
             }
         }
     }
-        
+    
+    
     @IBAction func logInPressed() {
         if nameTF.text != user.userName || passwordTF.text != user.password {
             showAlert(title: "Username or Password entered incorrect", message: "Repeat",

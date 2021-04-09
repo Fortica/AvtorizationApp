@@ -8,9 +8,15 @@
 import UIKit
 
 class HobbyViewController: UIViewController {
-
+    
+    @IBOutlet var hobbyLabel: UILabel!
+    
+    var hobby = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hobbyLabel.text = hobby
 
     }
     
