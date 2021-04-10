@@ -12,7 +12,11 @@ class GeneraleInfoViewController: UIViewController {
     @IBOutlet var generalNavigationLabel: UINavigationItem!
     @IBOutlet var generaleInfoLabel: UILabel!
     
-    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var photoImageView: UIImageView! {
+        didSet {
+            photoImageView.layer.cornerRadius = 15
+        }
+    }
     
     var generaleNavigationLabelMediator = ""
     var generaleInfoMediator = ""
@@ -34,7 +38,6 @@ class GeneraleInfoViewController: UIViewController {
         generaleInfoLabel.text = generaleInfoMediator
         
         photoImageView.image = imageMediator
-        photoImageView.layer.cornerRadius = 15
 
         
     }

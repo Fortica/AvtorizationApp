@@ -12,12 +12,12 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var emoji: UILabel!
     
-    var agentWelcomeLabel = ""
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLabel.text = "Welcome, \(agentWelcomeLabel)!"
+        welcomeLabel.text = "Welcome, \(user.userName)!"
     }
     
 }
