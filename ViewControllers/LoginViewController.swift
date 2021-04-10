@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var nameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    let user = User.getUser()
+    private let user = User.getUser()
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
@@ -32,8 +32,9 @@ class LoginViewController: UIViewController {
                 hobbyVC.hobby = user.person.myHobby
             } else if let navigationVC = view as? UINavigationController {
                 let generaleVC = navigationVC.topViewController as! GeneraleInfoViewController
-                generaleVC.generale = user.person.generalInfo
-                generaleVC.generaleNavigationLabel = user.person.name
+                generaleVC.generaleInfoMediator = user.person.generalInfo
+                generaleVC.generaleNavigationLabelMediator = user.person.name
+                generaleVC.imageMediator = UIImage(named: user.person.photo)
             }
         }
     }
