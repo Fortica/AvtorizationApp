@@ -18,28 +18,28 @@ class GeneralInfoViewController: UIViewController {
         }
     }
     
-    var generalNavigationLabelMediator = ""
-    var generalInfoMediator = ""
-    
-    var imageMediator: UIImage?
+    var user = User.getUser()
+    var viewModel: GeneralInfoViewModelProtocol! {
+        didSet {
+            generalNavigationLabel.title = viewModel.userName
+            generaleInfoLabel.text = "Общая информация: \(viewModel.userInfo)"
+            photoImageView.image = UIImage(named: viewModel.userImage)
+        }
+    }
     
     let userTarget = User.getUser()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel = GeneraleInfoViewModel(user: user)
+                
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let targetVC = segue.destination as! TargetViewController
         targetVC.myTarget = userTarget.person.target
         targetVC.myTargetNavigation = userTarget.person.name
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        generalNavigationLabel.title = "Общая информация: \(generalNavigationLabelMediator)"
-        generaleInfoLabel.text = generalInfoMediator
-        
-        photoImageView.image = imageMediator
-
-        
     }
 
 }

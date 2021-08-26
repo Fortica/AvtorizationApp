@@ -19,8 +19,8 @@ class DataManager {
         userDefaults.set(status, forKey: nameUser)
     }
         
-    func getNameUser(for nameUser: String) -> Bool {
-        userDefaults.bool(forKey: nameUser)
+    func getNameUser(for avtorazationName: String) -> Bool {
+        userDefaults.bool(forKey: avtorazationName)
     }
     
 }

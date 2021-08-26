@@ -32,11 +32,11 @@ class LoginViewController: UIViewController {
                 welcomeVC.user = user
             } else if let hobbyVC = $0 as? HobbyViewController {
                 hobbyVC.hobby = user
-            } else if let navigationVC = $0 as? UINavigationController {
-                let generaleVC = navigationVC.topViewController as! GeneralInfoViewController
-                generaleVC.generalInfoMediator = user.person.generalInfo
-                generaleVC.generalNavigationLabelMediator = user.person.name
-                generaleVC.imageMediator = UIImage(named: user.person.photo)
+            } else if $0 is UINavigationController {
+//                let generaleVC = navigationVC.topViewController as! GeneralInfoViewController
+//                generaleVC.generalInfoMediator = user.person.generalInfo
+//                generaleVC.generalNavigationLabelMediator = user.person.name
+//                generaleVC.imageMediator = UIImage(named: user.person.photo)
             }
         }
     }
