@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A4EBFED2620F92600E454FE /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4EBFEC2620F92600E454FE /* TargetViewController.swift */; };
-		6A696B9A261FA06F00A8EE81 /* GeneraleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A696B99261FA06F00A8EE81 /* GeneraleInfoViewController.swift */; };
+		6A696B9A261FA06F00A8EE81 /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A696B99261FA06F00A8EE81 /* GeneralInfoViewController.swift */; };
+		6A6B90F826D7FF01006C6468 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B90F726D7FF01006C6468 /* DataManager.swift */; };
 		6A7AA7FB261F741D00EAF1DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AA7FA261F741D00EAF1DD /* User.swift */; };
 		6A8775692618CB4A00EC7446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8775682618CB4A00EC7446 /* AppDelegate.swift */; };
 		6A87756B2618CB4A00EC7446 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87756A2618CB4A00EC7446 /* SceneDelegate.swift */; };
@@ -22,7 +23,8 @@
 
 /* Begin PBXFileReference section */
 		6A4EBFEC2620F92600E454FE /* TargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
-		6A696B99261FA06F00A8EE81 /* GeneraleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneraleInfoViewController.swift; sourceTree = "<group>"; };
+		6A696B99261FA06F00A8EE81 /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
+		6A6B90F726D7FF01006C6468 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		6A7AA7FA261F741D00EAF1DD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A8775652618CB4A00EC7446 /* AvtorizationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvtorizationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A8775682618CB4A00EC7446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A6B90F626D7FEC8006C6468 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6A6B90F726D7FF01006C6468 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		6A7AA7F2261F72A700EAF1DD /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +72,9 @@
 				6A87756C2618CB4A00EC7446 /* LoginViewController.swift */,
 				6A8BA244261A295E00EC6A5E /* WelcomeViewController.swift */,
 				6AE821A32620A81D00041D21 /* HobbyViewController.swift */,
-				6A696B99261FA06F00A8EE81 /* GeneraleInfoViewController.swift */,
 				6A4EBFEC2620F92600E454FE /* TargetViewController.swift */,
+				6A696B99261FA06F00A8EE81 /* GeneralInfoViewController.swift */,
+				6A6B90F626D7FEC8006C6468 /* Services */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,8 +209,9 @@
 				6A8775692618CB4A00EC7446 /* AppDelegate.swift in Sources */,
 				6AE821A42620A81D00041D21 /* HobbyViewController.swift in Sources */,
 				6A4EBFED2620F92600E454FE /* TargetViewController.swift in Sources */,
-				6A696B9A261FA06F00A8EE81 /* GeneraleInfoViewController.swift in Sources */,
+				6A696B9A261FA06F00A8EE81 /* GeneralInfoViewController.swift in Sources */,
 				6A7AA7FB261F741D00EAF1DD /* User.swift in Sources */,
+				6A6B90F826D7FF01006C6468 /* DataManager.swift in Sources */,
 				6A87756B2618CB4A00EC7446 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

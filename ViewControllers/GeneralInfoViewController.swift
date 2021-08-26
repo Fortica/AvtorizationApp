@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GeneraleInfoViewController: UIViewController {
+class GeneralInfoViewController: UIViewController {
     
     @IBOutlet var generalNavigationLabel: UINavigationItem!
     @IBOutlet var generaleInfoLabel: UILabel!
@@ -18,8 +18,8 @@ class GeneraleInfoViewController: UIViewController {
         }
     }
     
-    var generaleNavigationLabelMediator = ""
-    var generaleInfoMediator = ""
+    var generalNavigationLabelMediator = ""
+    var generalInfoMediator = ""
     
     var imageMediator: UIImage?
     
@@ -34,8 +34,8 @@ class GeneraleInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        generalNavigationLabel.title = "Общая информация: \(generaleNavigationLabelMediator)"
-        generaleInfoLabel.text = generaleInfoMediator
+        generalNavigationLabel.title = "Общая информация: \(generalNavigationLabelMediator)"
+        generaleInfoLabel.text = generalInfoMediator
         
         photoImageView.image = imageMediator
 
